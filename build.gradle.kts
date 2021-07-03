@@ -14,6 +14,7 @@ dependencies {
     implementation("org.openrndr:openrndr-dds:0.5.1-SNAPSHOT")
     implementation("org.openrndr:openrndr-draw:0.5.1-SNAPSHOT")
     implementation("org.openrndr:openrndr-webgl:0.5.1-SNAPSHOT")
+    implementation("org.openrndr.extra:orx-fx:0.5.1-SNAPSHOT")
 }
 kotlin {
     js(IR) {
