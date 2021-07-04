@@ -20,9 +20,11 @@ kotlin {
     js(IR) {
         browser {
             webpackTask {
+                outputFileName = "openrndr-program.js"
                 cssSupport.enabled = true
             }
             runTask {
+                outputFileName = "openrndr-program.js"
                 cssSupport.enabled = true
             }
             testTask {
