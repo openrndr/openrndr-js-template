@@ -14,13 +14,13 @@ val orxVersion = if (orxUseSnapshot) "0.5.1-SNAPSHOT" else "?.?.??"
 /*  Which additional multiplatform (ORX) libraries should be added to this project. */
 val orxFeatures = setOf(
 //    "orx-camera",
-    "orx-color",
+//    "orx-color",
 //    "orx-compositor",
 //    "orx-easing",
-//    "orx-fx",
+    "orx-fx",
 //    "orx-gradient-descent",
-//    "orx-image-fit",
-//    "orx-noise",
+    "orx-image-fit",
+    "orx-noise",
 //    "orx-parameters",
 //    "orx-shade-styles",
 //    "orx-shader-phrases",
