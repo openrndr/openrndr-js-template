@@ -1,9 +1,9 @@
-import org.openrndr.application
+import org.openrndr.applicationAsync
 import org.openrndr.color.ColorRGBa
 import org.openrndr.color.rgb
 import kotlin.math.cos
 
-suspend fun main() = application {
+suspend fun main() = applicationAsync {
     program {
         extend {
             val a = rgb("#ff0000")
