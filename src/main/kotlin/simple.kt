@@ -4,6 +4,9 @@ import org.openrndr.color.rgb
 import kotlin.math.cos
 
 suspend fun main() = applicationAsync {
+    // workaround for kotlin/js ignoring the initializer because it's "unused"
+    println(org.openrndr.webgl.applicationWebGLInitializer)
+
     program {
         extend {
             val a = rgb("#ff0000")
