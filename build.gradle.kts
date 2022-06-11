@@ -65,12 +65,6 @@ kotlin {
                 outputFileName = "openrndr-program.js"
                 cssSupport.enabled = true
             }
-            testTask {
-                useKarma {
-                    useChromeHeadless()
-                    webpackConfig.cssSupport.enabled = true
-                }
-            }
         }
         binaries.executable()
     }
