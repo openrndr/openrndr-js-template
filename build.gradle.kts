@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.kotlin.js") version "1.6.20"
+    kotlin("js") version "1.7.0"
 }
 group = "org.example"
 version = "1.0-SNAPSHOT"
@@ -12,7 +12,7 @@ val orxUseSnapshot = true
 val orxVersion = if (orxUseSnapshot) "0.5.1-SNAPSHOT" else "?.?.??"
 
 /*  Which additional multiplatform (ORX) libraries should be added to this project. */
-val orxFeatures = setOf(
+val orxFeatures = setOf<String>(
 //    "orx-camera",
 //    "orx-color",
 //    "orx-compositor",
@@ -25,8 +25,7 @@ val orxFeatures = setOf(
 //    "orx-shade-styles",
 //    "orx-shader-phrases",
 //    "orx-quadtree",
-    null
-).filterNotNull()
+)
 
 fun orx(module: String): Any {
     return "org.openrndr.extra:$module:$orxVersion"
