@@ -1,7 +1,7 @@
 import org.jetbrains.kotlin.gradle.targets.js.yarn.yarn
 
 plugins {
-    kotlin("js") version "1.7.0"
+    kotlin("js") version "1.7.10"
 }
 group = "org.example"
 version = "1.0-SNAPSHOT"
@@ -69,9 +69,4 @@ kotlin {
         }
         binaries.executable()
     }
-
-    // These are here because webpack-cli 4.9.2 (current default version)
-    // throws a TypeError on running the application
-    yarn.resolution("webpack", "5.73.0")
-    yarn.resolution("webpack-cli", "4.10.0")
 }
