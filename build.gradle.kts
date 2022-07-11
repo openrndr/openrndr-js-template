@@ -1,5 +1,3 @@
-import org.jetbrains.kotlin.gradle.targets.js.yarn.yarn
-
 plugins {
     kotlin("js") version "1.7.10"
 }
@@ -7,11 +5,11 @@ group = "org.example"
 version = "1.0-SNAPSHOT"
 
 /*  Which version of OPENRNDR and ORX should be used? */
-val openrndrUseSnapshot = true
-val openrndrVersion = if (openrndrUseSnapshot) "0.5.1-SNAPSHOT" else "?.?.??"
+val openrndrUseSnapshot = false
+val openrndrVersion = if (openrndrUseSnapshot) "0.5.1-SNAPSHOT" else "0.4.0"
 
-val orxUseSnapshot = true
-val orxVersion = if (orxUseSnapshot) "0.5.1-SNAPSHOT" else "?.?.??"
+val orxUseSnapshot = false
+val orxVersion = if (orxUseSnapshot) "0.5.1-SNAPSHOT" else "0.4.0-1"
 
 /*  Which additional multiplatform (ORX) libraries should be added to this project. */
 val orxFeatures = setOf<String>(
