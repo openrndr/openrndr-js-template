@@ -1,5 +1,8 @@
-# openrndr-js-template
+# OPENRNDR JavaScript template project
 
-Use with openrndr-0.4 and orx-0.4 branches. Publish both using `./gradlew publishToMavenLocal -Prelease.version=0.5.1-SNAPSHOT`
+This is a template project for creating [OPENRNDR](https://openrndr.org/) programs specifically with Kotlin/JS.
+For making a standard Kotlin/JVM-based application,
+see [openrndr-template](https://github.com/openrndr/openrndr-template).
 
-In IJ run the `browserDevelopmentRun --continuous` task  
+To get started, run the `browserDevelopmentRun --continuous` Gradle task. This will start a local development server 
+with hot-reloading. Any changes you make in `/src/main/kotlin` will be reflected in the browser.
