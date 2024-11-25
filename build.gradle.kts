@@ -12,14 +12,14 @@ val orxFeatures = setOf<String>(
 //    "orx-color",
 //    "orx-compositor",
 //    "orx-easing",
-    "orx-fx",
+//    "orx-fx",
 //    "orx-gradient-descent",
     "orx-image-fit",
     "orx-noise",
 //    "orx-parameters",
 //    "orx-shade-styles",
 //    "orx-shader-phrases",
-//    "orx-shapes",
+      "orx-shapes",
 //    "orx-quadtree",
 )
 
