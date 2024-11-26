@@ -4,9 +4,27 @@ import org.openrndr.extra.noise.Random
 import org.openrndr.extra.shapes.hobbycurve.hobbyCurve
 import org.openrndr.math.Polar
 
+// See https://kotlinlang.org/docs/js-interop.html#external-modifier
+// Reference to a JavaScript function declared in index.html
+external fun greet(name: String)
+
+// Reference to a global variable declared in index.html
+external var globalCounter: Int
+
+@ExperimentalJsExport
+@JsExport
+fun kotlinFunction() {
+    console.log("Kotlin function called")
+}
+
 fun main() = application {
     program {
+        console.log("OPENRNDR program started")
+
         extend {
+            // Update a JavaScript variable
+            globalCounter = frameCount
+
             drawer.clear(ColorRGBa.PINK)
             drawer.fill = ColorRGBa.WHITE
 
@@ -19,6 +37,10 @@ fun main() = application {
             }
             // Construct and draw a closed Hobby curve with the points.
             drawer.contour(hobbyCurve(points, true))
+        }
+        mouse.buttonDown.listen {
+            // Call a JavaScript function
+            greet("TemplateProgram.kt")
         }
     }
 }
