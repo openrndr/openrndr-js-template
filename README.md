@@ -17,7 +17,7 @@ Any changes you make in `/src/main/kotlin` will be reflected in the browser.
 When the project is ready to be shared, one can export a minimized executable by running
 
 ```bash
-./gradlew browserProductionWebpack
+./gradlew browserDistribution
 ```
 
 This will place an `index.html` file and the `openrndr-program.js`
