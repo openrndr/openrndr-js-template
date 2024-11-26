@@ -1,12 +1,10 @@
-import org.openrndr.applicationAsync
+import org.openrndr.application
 import org.openrndr.color.ColorRGBa
 import org.openrndr.extra.noise.Random
-import org.openrndr.extra.shapes.hobbyCurve
+import org.openrndr.extra.shapes.hobbycurve.hobbyCurve
 import org.openrndr.math.Polar
 
-// When targeting JavaScript we use `suspend` and `applicationAsync`.
-// The rest of the code is identical to an OPENRNDR program running in the JVM.
-suspend fun main() = applicationAsync {
+fun main() = application {
     program {
         extend {
             drawer.clear(ColorRGBa.PINK)
