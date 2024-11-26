@@ -21,15 +21,13 @@
 <body>
 <canvas id="openrndr-canvas"></canvas>
 <script language="JavaScript">
-
     let globalCounter = 0;
-    function greet(name) {
-        console.log("Hello, " + name + "! " + globalCounter);
+    function greet(name, cb) {
+        console.log("JS says hello, " + name + "! " + globalCounter);
+        setTimeout(function() {
+            cb();
+        }, 5000);
     }
-
-    setTimeout(function() {
-        kotlinFunction();
-    }, 5000);
 </script>
 <script src="openrndr-program.js"></script>
 </body>

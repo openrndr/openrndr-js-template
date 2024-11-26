@@ -6,20 +6,14 @@ import org.openrndr.math.Polar
 
 // See https://kotlinlang.org/docs/js-interop.html#external-modifier
 // Reference to a JavaScript function declared in index.html
-external fun greet(name: String)
+external fun greet(name: String, f: () -> Unit)
 
 // Reference to a global variable declared in index.html
 external var globalCounter: Int
 
-@ExperimentalJsExport
-@JsExport
-fun kotlinFunction() {
-    console.log("Kotlin function called")
-}
-
 fun main() = application {
     program {
-        console.log("OPENRNDR program started")
+        console.log("Kotlin says OPENRNDR program started")
 
         extend {
             // Update a JavaScript variable
@@ -40,7 +34,11 @@ fun main() = application {
         }
         mouse.buttonDown.listen {
             // Call a JavaScript function
-            greet("TemplateProgram.kt")
+            greet("TemplateProgram.kt") {
+                // Here we pass a function to JavaScript, which it will call after some seconds.
+                // This is an example of letting JS execute Kotlin functions.
+                console.log("Kotlin called back")
+            }
         }
     }
 }
