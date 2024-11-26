@@ -30,21 +30,8 @@ repositories {
     mavenLocal()
 }
 
-dependencies {
-    implementation(libs.kotlin.reflect)
-
-    implementation(libs.openrndr.application)
-    implementation(libs.openrndr.dds)
-    implementation(libs.openrndr.draw)
-    implementation(libs.openrndr.webgl)
-
-    for (feature in orxFeatures) {
-        implementation(orx(feature))
-    }
-}
-
 kotlin {
-    js(IR) {
+    js {
         browser {
             commonWebpackConfig {
                 outputFileName = "openrndr-program.js"
@@ -55,6 +42,22 @@ kotlin {
         }
         binaries.executable()
     }
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation(libs.kotlin.reflect)
+
+                implementation(libs.openrndr.application)
+                implementation(libs.openrndr.dds)
+                implementation(libs.openrndr.draw)
+                implementation(libs.openrndr.webgl)
+
+                for (feature in orxFeatures) {
+                    implementation(orx(feature))
+                }
+            }
+        }
+    }
 }
 
-tasks.getByName("browserDevelopmentRun").dependsOn("developmentExecutableCompileSync")
+//tasks.getByName("browserDevelopmentRun").dependsOn("developmentExecutableCompileSync")

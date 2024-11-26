@@ -7,7 +7,7 @@ see [openrndr-template](https://github.com/openrndr/openrndr-template).
 To get started developing, run 
 
 ```bash
-./gradlew browserDevelopmentRun --continuous
+./gradlew jsRun -t
 ```
 
 This will start a local development server with hot-reloading. 
@@ -17,7 +17,7 @@ Any changes you make in `/src/main/kotlin` will be reflected in the browser.
 When the project is ready to be shared, one can export a minimized executable by running
 
 ```bash
-./gradlew browserDistribution
+./gradlew jsBrowserDistribution
 ```
 
 This will place an `index.html` file and the `openrndr-program.js`
