@@ -4,28 +4,16 @@ import org.openrndr.extra.noise.Random
 import org.openrndr.extra.shapes.hobbycurve.hobbyCurve
 import org.openrndr.math.Polar
 
-// Reference to a global variable declared in index.html
-external var globalCounter: Int
-
-// Reference to a JavaScript function declared in index.html
-external fun greet(name: String)
-external fun setCallback(f: () -> Unit)
-
 fun main() = application {
     program {
         console.log("Kotlin says OPENRNDR program started")
 
-        // Here we pass a function to JavaScript, which it will call regularly.
-        // This is an example of letting JS execute Kotlin functions.
-        setCallback {
-            console.log("Interval Kotlin")
-        }
-
         extend {
-            // Update a JavaScript variable
-            globalCounter = frameCount
-
             drawer.clear(ColorRGBa.PINK)
+
+            drawer.fill = null
+            drawer.circle(drawer.bounds.center, 250.0)
+
             drawer.fill = ColorRGBa.WHITE
 
             // Create a List of points centered in the window.
@@ -37,10 +25,6 @@ fun main() = application {
             }
             // Construct and draw a closed Hobby curve with the points.
             drawer.contour(hobbyCurve(points, true))
-        }
-        mouse.buttonDown.listen {
-            // Call a JavaScript function
-            greet("TemplateProgram.kt")
         }
     }
 }
