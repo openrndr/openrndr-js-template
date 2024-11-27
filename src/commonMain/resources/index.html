@@ -22,12 +22,18 @@
 <canvas id="openrndr-canvas"></canvas>
 <script language="JavaScript">
     let globalCounter = 0;
-    function greet(name, cb) {
+    function greet(name) {
         console.log("JS says hello, " + name + "! " + globalCounter);
-        setTimeout(function() {
-            cb();
-        }, 5000);
     }
+
+    let callback = function() {}
+    function setCallback(cb) {
+        callback = cb;
+    }
+    setInterval(function() {
+        console.log("Interval JS");
+        callback();
+    }, 5000);
 </script>
 <script src="openrndr-program.js"></script>
 </body>
