@@ -12,4 +12,5 @@ openrndr-draw = { group = "org.openrndr", name = "openrndr-draw", version.ref = 
 openrndr-webgl = { group = "org.openrndr", name = "openrndr-webgl", version.ref = "openrndr" }
 
 [plugins]
-kotlin-js = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+

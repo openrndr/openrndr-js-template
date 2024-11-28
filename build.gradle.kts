@@ -1,6 +1,6 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.kotlin.js)
+    alias(libs.plugins.kotlin.multiplatform)
 }
 
 group = "org.example"
@@ -36,7 +36,7 @@ kotlin {
             commonWebpackConfig {
                 outputFileName = "openrndr-program.js"
                 cssSupport {
-                    enabled.set(true)
+                    enabled = true
                 }
             }
         }
