@@ -1,6 +1,7 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
+    alias(libs.plugins.versions)
 }
 
 group = "org.example"
@@ -60,4 +61,21 @@ kotlin {
     }
 }
 
-//tasks.getByName("browserDevelopmentRun").dependsOn("developmentExecutableCompileSync")
+tasks {
+    dependencyUpdates {
+        gradleReleaseChannel = "current"
+
+        val nonStableKeywords = listOf("alpha", "beta", "rc")
+
+        fun isNonStable(
+            version: String
+        ) = nonStableKeywords.any {
+            version.lowercase().contains(it)
+        }
+
+        rejectVersionIf {
+            isNonStable(candidate.version) && !isNonStable(currentVersion)
+        }
+    }
+}
+

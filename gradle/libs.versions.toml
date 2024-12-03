@@ -13,4 +13,5 @@ openrndr-webgl = { group = "org.openrndr", name = "openrndr-webgl", version.ref 
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+versions = { id = "com.github.ben-manes.versions", version = "0.51.0" }
 
