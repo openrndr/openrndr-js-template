@@ -26,7 +26,7 @@ During development the produced JavaScript program occupies a few megabytes.
 Once the project is ready to be shared, one can export a minimized executable by running
 
 ```bash
-./gradlew jsBrowserDistribution
+./gradlew jsBrowserProductionWebpack
 ```
 
 This will place an `index.html` file and the minimized `openrndr-program.js`
