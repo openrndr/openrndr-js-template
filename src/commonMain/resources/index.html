@@ -4,22 +4,32 @@
     <meta charset="UTF-8">
     <title>OPENRNDR</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
-    <style>
-        body, html {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        #openrndr-canvas {
-            display: block;
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    <link rel="stylesheet" href="beauty.css">
+    <link rel="stylesheet" href="highlightjs/androidstudio.min.css">
 </head>
 <body>
-<canvas id="openrndr-canvas"></canvas>
-<script src="openrndr-program.js"></script>
+    <canvas id="openrndr-canvas"></canvas>
+    <div id="menu"></div>
+    <div id="sourceButton"><a href="#">source</a></div>
+    <pre><code id="sourceCode" class="language-kotlin"></code></pre>
+
+    <script src="highlightjs/highlight.min.js"></script>
+    <script src="highlightjs/kotlin.min.js"></script>
+    <script>
+        function loadAndHighlight(url) {
+            fetch(url).then(response => response.text()).then((data) => {
+                let codeBlock = document.getElementById('sourceCode')
+                console.log(codeBlock)
+                console.log(data)
+                codeBlock.innerHTML = data
+                hljs.highlightElement(codeBlock);
+            })
+        }
+        document.getElementById('sourceButton').addEventListener('click', function() {
+            var e = document.getElementById('sourceCode');
+            e.style.display = e.style.display != 'block' ? 'block' : 'none';
+        });
+    </script>
+    <script src="openrndr-program.js"></script>
 </body>
 </html>

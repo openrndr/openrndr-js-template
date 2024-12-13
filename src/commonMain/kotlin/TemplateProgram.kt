@@ -1,30 +1,30 @@
-import org.openrndr.application
-import org.openrndr.color.ColorRGBa
-import org.openrndr.extra.noise.Random
-import org.openrndr.extra.shapes.hobbycurve.hobbyCurve
-import org.openrndr.math.Polar
+import kotlinx.browser.document
+import kotlinx.browser.window
+import org.w3c.dom.url.URLSearchParams
 
-fun main() = application {
-    program {
-        console.log("Kotlin says OPENRNDR program started")
+// Add your application functions here
+val myApps = mapOf(
+    "bouncyBubbles" to ::bouncyBubbles,
+    "justGreen" to ::justGreen,
+    "fabulousPink" to ::fabulousPink,
+)
 
-        extend {
-            drawer.clear(ColorRGBa.PINK)
+fun main() {
+    // Take the GET argument from the URL specifying which program to run. If missing take the first.
+    val currentProgram = URLSearchParams(window.location.search).get("program") ?: myApps.keys.first()
 
-            drawer.fill = null
-            drawer.circle(drawer.bounds.center, 250.0)
+    // Launch the selected program
+    myApps[currentProgram]!!.invoke()
 
-            drawer.fill = ColorRGBa.WHITE
-
-            // Create a List of points centered in the window.
-            // Use polar coordinates. The radius is animated using simplex noise.
-            val points = List(12) {
-                val angle = it * 30.0
-                val radius = 200.0 + Random.simplex(it * 0.1, it * 1.7 + seconds * 0.2) * 100.0
-                drawer.bounds.center + Polar(angle, radius).cartesian
-            }
-            // Construct and draw a closed Hobby curve with the points.
-            drawer.contour(hobbyCurve(points, true))
-        }
+    // Create a div with clickable links
+    val menuDiv = document.getElementById("menu")
+    menuDiv?.innerHTML = myApps.keys.joinToString(" ") { programName ->
+        if (programName != currentProgram)
+            """<a href="?program=$programName">$programName</a> """
+        else
+            """<span>$programName</span> """
     }
+
+    loadAndHighlight("kotlin/${currentProgram}.kt")
 }
+external fun loadAndHighlight(url: String)

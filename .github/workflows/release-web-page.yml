@@ -20,7 +20,10 @@ jobs:
           java-version: 21
           cache: gradle
 
-      - name: Build web page
+      - name: Build production web page
+        run: ./gradlew jsBrowserProductionWebpack
+
+      - name: Package production web page
         run: ./gradlew jsBrowserDistribution
 
       - name: Publish to gh-pages
