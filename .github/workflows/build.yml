@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - master
+      - next-version
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,4 +16,4 @@ jobs:
           cache: gradle
 
       - name: Build template
-        run: ./gradlew browserProductionWebpack
+        run: ./gradlew jsBrowserDistribution
