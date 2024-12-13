@@ -35,6 +35,7 @@ kotlin {
     js {
         browser {
             commonWebpackConfig {
+                sourceMaps = false // Double refresh workaround
                 outputFileName = "openrndr-program.js"
                 cssSupport {
                     enabled = true
