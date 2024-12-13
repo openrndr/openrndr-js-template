@@ -80,3 +80,17 @@ tasks {
     }
 }
 
+val embedSourcesTask by tasks.creating(Task::class) {
+    doLast {
+        copy {
+            from("src/commonMain/kotlin")
+            into("src/commonMain/resources/kotlin/")
+        }
+        println("Copied kotlin folder into resources")
+    }
+}
+
+tasks.named("jsRun") {
+    dependsOn(embedSourcesTask)
+}
+
