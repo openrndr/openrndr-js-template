@@ -29,4 +29,5 @@ fun fabulousPink() = application {
             // Construct and draw a closed Hobby curve with the points.
             drawer.contour(hobbyCurve(points, true))
         }
-    }}
+    }
+}

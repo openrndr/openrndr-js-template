@@ -84,7 +84,8 @@ val embedSourcesTask by tasks.creating(Task::class) {
     doLast {
         copy {
             from("src/commonMain/kotlin")
-            into("src/commonMain/resources/kotlin/")
+            rename { "$it.txt" }
+            into("src/commonMain/resources/sources-for-web/")
         }
         println("Copied kotlin folder into resources")
     }

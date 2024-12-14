@@ -1,4 +1,4 @@
 .gradle
 build
 .idea
-src/commonMain/resources/kotlin/
+src/commonMain/resources/sources-for-web/

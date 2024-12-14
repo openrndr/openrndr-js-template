@@ -25,6 +25,6 @@ fun main() {
             """<span>$programName</span> """
     }
 
-    loadAndHighlight("kotlin/${currentProgram}.kt")
+    loadAndHighlight("sources-for-web/${currentProgram}.kt.txt")
 }
 external fun loadAndHighlight(url: String)
