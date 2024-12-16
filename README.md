@@ -6,7 +6,7 @@ see [openrndr-template](https://github.com/openrndr/openrndr-template).
 
 ## Developing
 
-To get started developing, run 
+To get started run 
 
 ```bash
 ./gradlew jsRun -t
@@ -22,7 +22,11 @@ displayed as clickable buttons in the resulting web page. For educational purpos
 button is displayed at the bottom right to view the source code of
 the program.
 
-Programs to be displayed in the web page should be added to `myApps` in `TemplateProgram.kt`. 
+After adding, renaming or removing programs from this project one should update `appList.kt`. Run the following Gradle task to generate the file automatically
+
+```bash
+./gradlew "update appList"
+```
 
 ## Exporting
 
@@ -35,7 +39,7 @@ Once the project is ready to be shared, one can export a minimized executable by
 ```
 
 This will place the resulting files into the
- `build/dist/js/productionExecutable/` folder..
+ `build/dist/js/productionExecutable/` folder.
 
 ## JavaScript communication
 
