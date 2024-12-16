@@ -4,6 +4,10 @@ This is a template project for creating [OPENRNDR](https://openrndr.org/) progra
 For making a standard Kotlin/JVM-based application,
 see [openrndr-template](https://github.com/openrndr/openrndr-template).
 
+## Live demo
+
+See https://openrndr.github.io/openrndr-js-template/
+
 ## Developing
 
 To get started run 
