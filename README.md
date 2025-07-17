@@ -13,7 +13,7 @@ See https://openrndr.github.io/openrndr-js-template/
 To get started run 
 
 ```bash
-./gradlew jsRun -t
+./gradlew jsBrowserDevelopmentRun -t
 ```
 
 This will start a local development server with hot-reloading. 

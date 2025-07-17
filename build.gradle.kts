@@ -90,7 +90,7 @@ val embedSourcesTask by tasks.creating(Task::class) {
     }
 }
 
-tasks.named("jsRun") { dependsOn(embedSourcesTask) }
+tasks.named("jsBrowserDevelopmentRun") { dependsOn(embedSourcesTask) }
 tasks.named("jsBrowserProductionWebpack") { dependsOn(embedSourcesTask) }
 
 

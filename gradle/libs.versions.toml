@@ -1,7 +1,7 @@
 [versions]
-kotlin = "2.1.0"
-openrndr = "0.4.5-alpha6"
-orx = "0.4.5-alpha6"
+kotlin = "2.2.0"
+openrndr = "0.4.5-alpha9"
+orx = "0.4.5-alpha9"
 
 [libraries]
 kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
