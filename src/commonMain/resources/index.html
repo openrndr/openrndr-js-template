@@ -18,8 +18,6 @@
         function loadAndHighlight(url) {
             fetch(url).then(response => response.text()).then((data) => {
                 let codeBlock = document.getElementById('sourceCode')
-                console.log(codeBlock)
-                console.log(data)
                 codeBlock.innerHTML = data
                 hljs.highlightElement(codeBlock);
             })
