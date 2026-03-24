@@ -3,6 +3,7 @@ import org.openrndr.color.ColorRGBa
 import org.openrndr.extra.noise.Random
 import org.openrndr.extra.shapes.hobbycurve.hobbyCurve
 import org.openrndr.math.Polar
+import web.console.console
 
 fun fabulousPink() = application {
     configure {
