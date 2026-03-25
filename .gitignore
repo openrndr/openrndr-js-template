@@ -1,4 +1,5 @@
-.gradle
+.gradle/
+.kotlin/
+.idea/
 build
-.idea
 src/webMain/resources/sources-for-web/
