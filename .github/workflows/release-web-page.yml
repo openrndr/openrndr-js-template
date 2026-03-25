@@ -20,11 +20,17 @@ jobs:
           java-version: 21
           cache: gradle
 
-      - name: Build production web page
+      - name: Build production JS web page
         run: ./gradlew jsBrowserProductionWebpack
 
-      - name: Package production web page
+      - name: Package production JS web page
         run: ./gradlew jsBrowserDistribution
+
+      - name: Build production WASM web page
+        run: ./gradlew wasmJsBrowserProductionWebpack
+
+      - name: Package production WASM web page
+        run: ./gradlew wasmJsBrowserDistribution
 
       - name: Publish to gh-pages
         run: |
@@ -33,7 +39,12 @@ jobs:
           git checkout --orphan gh-pages
           git reset HEAD -- .
           git clean -df
+          
           mv ../build/dist/js/productionExecutable/* .
+
+          mkdir wasmVersion
+          mv ../build/dist/wasmJs/productionExecutable/* wasmVersion
+
           git status
           git config --global user.email "actions@openrndr.org"
           git config --global user.name "OPENRNDR Actions"

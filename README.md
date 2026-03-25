@@ -6,7 +6,9 @@ see [openrndr-template](https://github.com/openrndr/openrndr-template).
 
 ## Live demo
 
-See https://openrndr.github.io/openrndr-js-template/
+See [JavaScript](https://openrndr.github.io/openrndr-js-template/) and 
+[Wasm](https://openrndr.github.io/openrndr-js-template/wasmVersion/) versions of
+this project generated using [this worflow](https://github.com/openrndr/openrndr-js-template/blob/next-version/.github/workflows/release-web-page.yml).
 
 ## Developing
 
