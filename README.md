@@ -17,6 +17,8 @@ To get started run
 ./gradlew wasmJsBrowserDevelopmentRun -t
 ```
 
+or
+
 ```bash
 # JavaScript
 ./gradlew jsBrowserDevelopmentRun -t
@@ -45,12 +47,22 @@ During development the produced JavaScript program occupies a few megabytes.
 Once the project is ready to be shared, one can export a minimized executable by running
 
 ```bash
+# Wasm
+./gradlew wasmJsBrowserProductionWebpack
+./gradlew wasmJsBrowserDistribution
+```
+
+or
+
+```bash
+# JavaScript
 ./gradlew jsBrowserProductionWebpack
 ./gradlew jsBrowserDistribution
 ```
 
 This will place the resulting files into the
- `build/dist/js/productionExecutable/` folder.
+ `build/dist/js/productionExecutable/` or
+ `build/dist/wasmJs/productionExecutable` folder.
 
 ## JavaScript communication
 
