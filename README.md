@@ -1,6 +1,6 @@
-# OPENRNDR JavaScript template project
+# OPENRNDR Wasm & JavaScript template project
 
-This is a template project for creating [OPENRNDR](https://openrndr.org/) programs specifically with Kotlin/JS.
+This is a template project for creating [OPENRNDR](https://openrndr.org/) programs specifically with Kotlin/Wasm & Kotlin/JS.
 For making a standard Kotlin/JVM-based application,
 see [openrndr-template](https://github.com/openrndr/openrndr-template).
 
@@ -13,13 +13,20 @@ See https://openrndr.github.io/openrndr-js-template/
 To get started run 
 
 ```bash
+# Wasm
+./gradlew wasmJsBrowserDevelopmentRun -t
+```
+
+```bash
+# JavaScript
 ./gradlew jsBrowserDevelopmentRun -t
 ```
 
-This will start a local development server with hot-reloading. 
+These will start a local development server with hot-reloading for the respective web targets. 
 
-Any changes saved under `/src/commonMain/kotlin/` will be reflected 
-in the browser.
+Any changes saved under `/src/webMain/kotlin/` will be reflected 
+in the browser. Code specific to Wasm and JavaScript targets can be located 
+under `/src/wasmJsMain/kotlin/` and `/src/jsMain/kotlin/` respectively.
 
 This template includes three sample OPENRNDR programs. These programs are
 displayed as clickable buttons in the resulting web page. For educational purposes, a `source`
